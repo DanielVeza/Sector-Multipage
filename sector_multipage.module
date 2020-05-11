@@ -1,0 +1,27 @@
+<?php
+
+// From core/modules/contextual/contextual.module.
+// Temp for development
+function sector_multipage_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'sector_multipage/sector_multipage.toc';
+}
+
+function sector_multipage_theme($existing, $type, $theme, $path) {
+  return [
+    'multipage_in_page_navigation' => [
+      'variables' => [
+        'headings' => NULL,
+      ],
+      'template' => 'multipage-in-page-navigation',
+    ],
+    'multipage_pager' => [
+      'variables' => ['content' => NULL],
+      'template' => 'multipage-pager',
+    ],
+    'multipage_actions' => [
+      'variables' => ['content' => NULL],
+      'template' => 'multipage-actions',
+    ]
+  ];
+
+}

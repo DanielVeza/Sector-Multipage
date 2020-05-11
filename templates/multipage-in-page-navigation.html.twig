@@ -1,0 +1,11 @@
+<div class="cover__navigation" name="cover__navigation">
+  <nav role='navigation' id='navigation--in-page' class='navigation navigation--in-page card'>
+    <h5 class="card-header">Table of contents</h5>
+    <ol class="list-group list-group-flush list-unstyled">
+      {% for heading in headings %}
+        {% set classname = loop.index == 1 ? "active" : '' %}
+      <li class="list-group-item {{ classname }}"><a href="#heading-{{ loop.index }}">{{ heading }}</a></li>
+      {% endfor %}
+    </ol>
+  </nav>
+</div>

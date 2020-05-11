@@ -1,0 +1,104 @@
+uuid: 9ab6e5b7-1c65-4140-87fd-186299ce69ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.resource_multipage.body
+    - field.field.node.resource_multipage.field_copyright_license
+    - field.field.node.resource_multipage.field_issue_date
+    - field.field.node.resource_multipage.field_last_updated
+    - field.field.node.resource_multipage.field_related_files
+    - field.field.node.resource_multipage.field_related_links
+    - field.field.node.resource_multipage.field_teaser
+    - node.type.resource_multipage
+  module:
+    - datetime
+    - ds
+    - field_formatter_filter
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_issue_date
+        - body
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h3
+          class: 'slat__title h3 has-no-margin'
+          link: false
+        ft:
+          id: reset
+          settings:
+            lb: ''
+id: node.resource_multipage.teaser
+targetEntityType: node
+bundle: resource_multipage
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 2
+    settings:
+      trim_length: 256
+    third_party_settings:
+      field_formatter_filter:
+        format: basic_html
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            classes:
+              - slat__body
+            lb-col: false
+    region: ds_content
+  field_issue_date:
+    type: datetime_default
+    weight: 1
+    region: ds_content
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: sector_medium_date
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+hidden:
+  field_copyright_license: true
+  field_last_updated: true
+  field_related_files: true
+  field_related_links: true
+  field_teaser: true
+  links: true
+  search_api_excerpt: true

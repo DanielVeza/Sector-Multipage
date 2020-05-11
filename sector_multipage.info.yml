@@ -1,0 +1,5 @@
+name: Sector Multipage
+type: module
+description: 'Sector add on - Multipage documents'
+package: 'Sector'
+core: 8.x

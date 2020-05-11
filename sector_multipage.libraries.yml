@@ -1,0 +1,7 @@
+sector_multipage.toc:
+  version: VERSION
+  js:
+    js/sector_multipage_toc.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

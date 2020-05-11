@@ -1,0 +1,212 @@
+uuid: b328ed00-472f-48da-a7ab-f32451da0e05
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.resource_multipage.body
+    - field.field.node.resource_multipage.field_copyright_license
+    - field.field.node.resource_multipage.field_issue_date
+    - field.field.node.resource_multipage.field_last_updated
+    - field.field.node.resource_multipage.field_related_files
+    - field.field.node.resource_multipage.field_related_links
+    - field.field.node.resource_multipage.field_teaser
+    - node.type.resource_multipage
+  module:
+    - datetime
+    - ds
+    - dynamic_text_wrapper
+    - field_delimiter
+    - field_formatter_filter
+    - field_group
+    - link
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - group_meta
+        - body
+        - field_issue_date
+        - links
+        - field_last_updated
+        - field_related_files
+        - field_copyright_license
+        - group_related_content
+        - field_related_links
+  field_group:
+    group_meta:
+      children:
+        - field_issue_date
+        - field_last_updated
+        - field_copyright_license
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: 'meta call-to-action-left-line'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Meta
+    group_related_content:
+      children:
+        - field_related_links
+      parent_name: ''
+      weight: 4
+      format_type: html_element
+      region: ds_content
+      format_settings:
+        id: ''
+        classes: 'related has-margin-top-double'
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Related content'
+id: node.resource_multipage.default
+targetEntityType: node
+bundle: resource_multipage
+mode: default
+content:
+  body:
+    label: hidden
+    type: dynamic_text_wrapper_formatter
+    weight: 1
+    settings: {  }
+    third_party_settings:
+      dynamic_text_wrapper:
+        wrapper: div_wrapper
+      field_formatter_filter:
+        format: '0'
+      ds:
+        ft:
+          id: minimal
+          settings:
+            lb: ''
+            classes:
+              - prose
+              - multipage
+            lb-col: false
+    region: ds_content
+  field_copyright_license:
+    weight: 4
+    label: inline
+    settings:
+      link: false
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_issue_date:
+    weight: 2
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: sector_medium_date
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: true
+            classes: {  }
+    type: datetime_default
+    region: ds_content
+  field_last_updated:
+    weight: 3
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: sector_medium_date
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: datetime_default
+    region: ds_content
+  field_related_files:
+    weight: 3
+    label: above
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings:
+      field_delimiter:
+        delimiter: ''
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: 'Available formats and related files'
+            classes:
+              - list--related-files
+            lb-col: false
+    type: entity_reference_entity_view
+    region: ds_content
+  field_related_links:
+    weight: 5
+    label: above
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      field_delimiter:
+        delimiter: ''
+      ds:
+        ds_limit: ''
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: false
+            classes: {  }
+    type: link
+    region: ds_content
+  links:
+    weight: 2
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_teaser: true
+  search_api_excerpt: true

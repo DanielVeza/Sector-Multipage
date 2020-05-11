@@ -1,0 +1,144 @@
+uuid: cbcf0a88-ca53-410f-a0f9-c0aac4f1d4b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.short_teaser
+    - field.field.node.resource_multipage.body
+    - field.field.node.resource_multipage.field_copyright_license
+    - field.field.node.resource_multipage.field_issue_date
+    - field.field.node.resource_multipage.field_last_updated
+    - field.field.node.resource_multipage.field_related_files
+    - field.field.node.resource_multipage.field_related_links
+    - field.field.node.resource_multipage.field_teaser
+    - node.type.resource_multipage
+  module:
+    - datetime
+    - ds
+    - field_group
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+          ds_content: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_issue_date
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h3
+          class: ''
+          link: false
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow: true
+            ow-el: div
+            ow-cl: has-margin-top-base-alternate
+            ow-at: ''
+            fis: true
+            fis-el: h3
+            fis-cl: 'slat__title h5 has-no-margin'
+            fis-at: ''
+            fi-el: ''
+            fi-cl: ''
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis-def-at: false
+            fi: false
+            fi-def-at: false
+  field_group:
+    group_meta:
+      children:
+        - field_copyright_license
+      parent_name: ''
+      weight: 17
+      format_type: html_element
+      region: hidden
+      format_settings:
+        id: ''
+        classes: 'meta call-to-action-left-line'
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Meta
+    group_related_content:
+      children: {  }
+      parent_name: ''
+      weight: 18
+      format_type: html_element
+      region: hidden
+      format_settings:
+        id: ''
+        classes: 'related has-margin-top-double'
+        element: div
+        show_label: true
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Related content'
+id: node.resource_multipage.short_teaser
+targetEntityType: node
+bundle: resource_multipage
+mode: short_teaser
+content:
+  field_issue_date:
+    weight: 1
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: sector_medium_date
+    third_party_settings:
+      ds:
+        ft:
+          id: default
+          settings:
+            lb: ''
+            lb-col: true
+            classes: {  }
+    type: datetime_default
+    region: ds_content
+hidden:
+  body: true
+  field_copyright_license: true
+  field_last_updated: true
+  field_related_files: true
+  field_related_links: true
+  field_teaser: true
+  links: true
+  search_api_excerpt: true

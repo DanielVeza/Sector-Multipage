@@ -1,0 +1,32 @@
+uuid: 68544def-697e-4b3a-aff9-477e4a471594
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - node
+    - sector_multipage
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: multipage
+id: sectormultipagemultipagepager
+theme: sector_radix_starter
+region: content
+weight: 0
+provider: null
+plugin: multipage_pager
+settings:
+  id: multipage_pager
+  label: 'Sector Multipage - Multipage pager'
+  provider: sector_multipage
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      resource_multipage: resource_multipage
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

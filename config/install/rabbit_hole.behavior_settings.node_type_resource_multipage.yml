@@ -1,0 +1,11 @@
+uuid: f370b6a6-35c5-450d-91d6-29af4723a0eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.resource_multipage
+id: node_type_resource_multipage
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

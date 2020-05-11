@@ -1,0 +1,34 @@
+uuid: 0738f9c5-32c1-409d-8c81-484404cf9375
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - node
+    - sector_multipage
+  theme:
+    - sector_radix_starter
+third_party_settings:
+  block_class:
+    classes: 'multipage mt-4'
+id: sectormultipageinpagenavigation
+theme: sector_radix_starter
+region: sidebar
+weight: -24
+provider: null
+plugin: multipage_in_page_navigation
+settings:
+  id: multipage_in_page_navigation
+  label: 'Sector Multipage - In page navigation'
+  provider: sector_multipage
+  label_display: '0'
+  context_mapping:
+    node: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      resource_multipage: resource_multipage
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

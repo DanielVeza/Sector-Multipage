@@ -1,0 +1,28 @@
+uuid: 1d73146b-761c-490a-8378-9477f6efa33c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - sector_multipage
+  theme:
+    - sector_radix_starter
+id: sectormultipagemultipageactions
+theme: sector_radix_starter
+region: sidebar
+weight: -25
+provider: null
+plugin: multipage_actions
+settings:
+  id: multipage_actions
+  label: 'Sector Multipage - Multipage actions'
+  provider: sector_multipage
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      resource_multipage: resource_multipage
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
